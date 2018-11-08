@@ -1,14 +1,26 @@
 
 
-## Dev 
+## 1- Install 
 ```
-$  yarn add -D codeceptjs webdriverio
+$  npm install
 ```
 
 
-## Start a selenium 
+## 2- Init Env 
+```
+$  source env.sh
+```
+
+## 3- Start a selenium 
 
 ```
-$ docker run --net=host selenium/standalone-chrome
+$ docker run -d -p 4444:4444 -v /dev/shm:/dev/shm selenium/standalone-chrome:3.14.0-beryllium
+
+```
+
+## 4- Run
+
+```
+$ npm start
 
 ```
