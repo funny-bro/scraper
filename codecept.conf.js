@@ -11,6 +11,9 @@ exports.config = {
       smartWait: 5000,
       restart: false,
       waitForTimeout: 10000
+    },
+    MyHelper: {
+      require: "./functional/codecepthelper_helper"
     }
   },
   include: {

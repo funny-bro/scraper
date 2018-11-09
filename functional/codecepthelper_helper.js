@@ -12,12 +12,22 @@ class CodeceptHelper extends Helper {
     if(this.helpers.Nightmare)
       this.helpers['Nightmare'].browser.visible(locator);
   }
-  setCookie(cookieObj) {
-    console.log('setCookie: -=-=-= ')
+  
+  selectOptionByOrder(selector, order) {
+    console.log(' -=-=-=-=-=-= selectOptionByOrder -=-=-=-=-=')
+    console.log(' click order : ', selector, order)
+    return this.helpers.WebDriverIO.executeScript(function(selector, order){
+      return document.querySelector(selector).selectedIndex = order
+    }, selector, order)
+  }
 
-    if(this.helpers.webdriver)
-    console.log('webdriver: -=-=-= ')
-      // this.helpers['Nightmare'].browser.visible(locator);
+  clickButton(selector) {
+    console.log(' -=-=-=-=-=-= clickButton -=-=-=-=-=')
+    console.log(' click : ', selector)
+    return this.helpers.WebDriverIO.executeScript(function(selector){
+      console.log( document.querySelector(selector))
+      return document.querySelector(selector).click()
+    }, selector)
   }
 }
 
