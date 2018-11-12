@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "codeceptjs run --steps"
+    "start": "codeceptjs run --steps",
+    "start:api": "node fetch"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "webdriverio": "^4.14.0"
   },
   "dependencies": {
+    "nightmare": "^3.0.1",
     "node-fetch": "^2.2.1"
   }
 }
